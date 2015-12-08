@@ -20,10 +20,12 @@
 
 /* Per mostrar el Dialog de Info */
 #include "dialog.h"
+#include "dialog2.h"
 
 namespace Ui {
 class MainWindow;
 class Dialog;
+class Dialog2;
 }
 
 class MainWindow : public QMainWindow
@@ -47,11 +49,10 @@ private slots:
     QByteArray MD4_sum(QString nomFitxer);
     QByteArray MD5_sum(QString nomFitxer);
 
-    void on_actionMd4_triggered();
-
 private:
     Ui::MainWindow *ui;
     Dialog *mDialog;
+    Dialog2 *mDialog2;
 };
 
 #endif // MAINWINDOW_H

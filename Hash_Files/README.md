@@ -7,3 +7,6 @@ Update: for the colorblind people, there's a "Colorblind" menu which if activate
 	change the default color to BLUE color if the two files matches and BLACK if didn't.
 
 When files are the same, the status bar will prompt the MD5.
+
+For the paranoid people, there's the "Expert Hash" which will prompt a colourfull dialog
+showing visually if there's a collision on MD5.

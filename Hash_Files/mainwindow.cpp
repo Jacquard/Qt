@@ -55,6 +55,9 @@ int MainWindow::Calcula(QString string1, QString string2)
 
     if ((caracterInicial_string1 == 47) && (caracterInicial_string2 == 47))
     {
+        ui->label_Fitxer_1->setText("File 1:");
+        ui->label_Fitxer_2->setText("File 2:");
+
         QFile file1(string1);
         QFile file2(string2);
         if (file1.open(QIODevice::ReadOnly) && file2.open(QIODevice::ReadOnly))
@@ -85,14 +88,18 @@ int MainWindow::Calcula(QString string1, QString string2)
                         pintar(1);
                     }
                     ui->statusBar->showMessage("MD5:  " + QString(QCryptographicHash::hash(unga_sha3, QCryptographicHash::Md5).toHex()));
-                    ui->statusBar->setToolTip("File comparison made with SHA3_512. Here's only the MD5");
+                    QMessageBox::information(this, "Info", "File comparison made with SHA3_512.\nHere's only the MD5");
                     if (ui->actionShow_info->isChecked())
                     {
                         AcceptaPeticio(1, string1);
                     }
-                    if (ui->menuHash->isEnabled())
+                    if (ui->actionThe_expert_hash->isChecked())
                     {
-
+                        QThread::sleep(1);
+                        mDialog2 = new Dialog2(this);
+                        mDialog2->setWindowTitle("The 'Expert' hashes");
+                        mDialog2->collision(string1, string2);
+                        mDialog2->show();
                     }
                     return 1;
                 }
@@ -108,6 +115,14 @@ int MainWindow::Calcula(QString string1, QString string2)
                     pintar(2);
                 }
                 ui->statusBar->showMessage("    ¡Nchts Cagontó!  Files differ!");
+                if (ui->actionThe_expert_hash->isChecked())
+                {
+                    QThread::sleep(1);
+                    mDialog2 = new Dialog2(this);
+                    mDialog2->setWindowTitle("The 'Expert' hashes");
+                    mDialog2->collision(string1, string2);
+                    mDialog2->show();
+                }
                 return 0;
             }
         }
@@ -124,6 +139,7 @@ int MainWindow::Calcula(QString string1, QString string2)
         if ((((lletra1.unicode() >= 97) && (lletra1.unicode() <= 102)) || ((lletra1.unicode() >= 48) && (lletra1.unicode() <= 57))) && (lletra2.unicode() == 47))
         {
             ui->label_Fitxer_1->setText("Hash 1:");
+            ui->label_Fitxer_2->setText("File 2:");
 
             QFile file2(string2);
 
@@ -250,6 +266,7 @@ int MainWindow::Calcula(QString string1, QString string2)
         }
         else if ((((lletra2.unicode() >= 97) && (lletra2.unicode() <= 102)) || ((lletra2.unicode() >= 48) && (lletra2.unicode() <= 57))) && (lletra1.unicode() == 47))
         {
+            ui->label_Fitxer_1->setText("File 1:");
             ui->label_Fitxer_2->setText("Hash 2:");
 
             QFile file1(string1);
@@ -459,14 +476,4 @@ QByteArray MainWindow::MD5_sum(QString nomFitxer)
     QMessageBox::information(this, "MD5 Hash", resultat_FitxerLlegit.toHex());
 
     return 0;
-}
-
-void MainWindow::on_actionMd4_triggered()
-{
-    QString arxiu1 = ui->lineEdit1->text();
-    QString arxiu2 = ui->lineEdit2->text();
-    if (QString::compare(arxiu1, arxiu2, Qt::CaseInsensitive) == 0)
-    {
-        MD4_sum(arxiu1);
-    }
 }

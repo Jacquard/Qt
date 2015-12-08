@@ -11,11 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Tyby File Comp v0.1a</string>
+   <string>Tyby File Comp v0.2b</string>
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../../../../../usr/share/icons/hicolor/scalable/apps/virtualbox.svg</normaloff>../../../../../../usr/share/icons/hicolor/scalable/apps/virtualbox.svg</iconset>
+    <normaloff>../../../../../../usr/share/icons/hicolor/16x16/emblems/emblem-note.png</normaloff>../../../../../../usr/share/icons/hicolor/16x16/emblems/emblem-note.png</iconset>
   </property>
   <property name="windowOpacity">
    <double>1.000000000000000</double>
@@ -122,7 +122,7 @@
      <x>0</x>
      <y>0</y>
      <width>498</width>
-     <height>30</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">
@@ -130,6 +130,7 @@
      <string>&amp;Menu</string>
     </property>
     <addaction name="actionShow_info"/>
+    <addaction name="actionThe_expert_hash"/>
     <addaction name="actionSortir"/>
    </widget>
    <widget class="QMenu" name="menuDaltonics">
@@ -138,40 +139,7 @@
     </property>
     <addaction name="actionActivate"/>
    </widget>
-   <widget class="QMenu" name="menuHash">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="title">
-     <string>Hash</string>
-    </property>
-    <widget class="QMenu" name="menuSHA2">
-     <property name="title">
-      <string>&amp;SHA2</string>
-     </property>
-     <addaction name="actionSha1"/>
-     <addaction name="actionSha224"/>
-     <addaction name="actionSha256"/>
-     <addaction name="actionSha384"/>
-     <addaction name="actionSha512"/>
-    </widget>
-    <widget class="QMenu" name="menuSHA3">
-     <property name="title">
-      <string>S&amp;HA3</string>
-     </property>
-     <addaction name="actionSha1_2"/>
-     <addaction name="actionSha224_2"/>
-     <addaction name="actionSha256_2"/>
-     <addaction name="actionSha384_2"/>
-     <addaction name="actionSha512_2"/>
-    </widget>
-    <addaction name="actionMd4"/>
-    <addaction name="actionMD5"/>
-    <addaction name="menuSHA2"/>
-    <addaction name="menuSHA3"/>
-   </widget>
    <addaction name="menuMenu"/>
-   <addaction name="menuHash"/>
    <addaction name="menuDaltonics"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
@@ -211,64 +179,6 @@
     <string>&amp;Activate</string>
    </property>
   </action>
-  <action name="actionMD5">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>&amp;MD5</string>
-   </property>
-  </action>
-  <action name="actionSha1">
-   <property name="text">
-    <string>&amp;SHA 1</string>
-   </property>
-  </action>
-  <action name="actionSha224">
-   <property name="text">
-    <string>SHA &amp;224</string>
-   </property>
-  </action>
-  <action name="actionSha256">
-   <property name="text">
-    <string>S&amp;HA 256</string>
-   </property>
-  </action>
-  <action name="actionSha384">
-   <property name="text">
-    <string>SHA &amp;384</string>
-   </property>
-  </action>
-  <action name="actionSha512">
-   <property name="text">
-    <string>SHA &amp;512</string>
-   </property>
-  </action>
-  <action name="actionSha1_2">
-   <property name="text">
-    <string>&amp;SHA1</string>
-   </property>
-  </action>
-  <action name="actionSha224_2">
-   <property name="text">
-    <string>SHA &amp;224</string>
-   </property>
-  </action>
-  <action name="actionSha256_2">
-   <property name="text">
-    <string>S&amp;HA 256</string>
-   </property>
-  </action>
-  <action name="actionSha384_2">
-   <property name="text">
-    <string>SHA &amp;384</string>
-   </property>
-  </action>
-  <action name="actionSha512_2">
-   <property name="text">
-    <string>SHA &amp;512</string>
-   </property>
-  </action>
   <action name="actionShow_info">
    <property name="checkable">
     <bool>true</bool>
@@ -286,6 +196,14 @@
    </property>
    <property name="toolTip">
     <string>MD4 (Deprecated)</string>
+   </property>
+  </action>
+  <action name="actionThe_expert_hash">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>The expert hash</string>
    </property>
   </action>
  </widget>
