@@ -53,6 +53,15 @@ int MainWindow::Calcula(QString string1, QString string2)
     QChar caracterInicial_string1 = string1.at(0);
     QChar caracterInicial_string2 = string2.at(0);
 
+    if (caracterInicial_string1 == 66)
+    {
+        caracterInicial_string1 = string1.at(7);
+    }
+    if (caracterInicial_string2 == 66)
+    {
+        caracterInicial_string2 = string2.at(7);
+    }
+
     if ((caracterInicial_string1 == 47) && (caracterInicial_string2 == 47))
     {
         ui->label_Fitxer_1->setText("File 1:");
