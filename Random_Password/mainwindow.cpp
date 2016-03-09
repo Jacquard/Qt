@@ -28,7 +28,12 @@ void MainWindow::on_pushButton_clicked()
     QString unga = cadena(longitudContrasenya);
     QByteArray array = unga.toLatin1();
     ui->label->setText(unga);
-    ui->statusBar->showMessage("    SHA-1:  " + QString(QCryptographicHash::hash(array, QCryptographicHash::Sha1).toHex()));
+    /*
+     * Total pool of printable characters: 86
+     * The bits per character will be 6.42626475
+     */
+    qreal Entropy = qLn(86)/qLn(2);
+    ui->statusBar->showMessage("    Entropy :    " + QString::number(Entropy*longitudContrasenya));
 }
 
 QString MainWindow::cadena(const int longitud)

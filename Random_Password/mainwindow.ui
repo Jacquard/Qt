@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../../../Download/Icons/PadLock.png</normaloff>../../../../Download/Icons/PadLock.png</iconset>
+    <normaloff>../../../../Baixades/Icons/PadLock.png</normaloff>../../../../Baixades/Icons/PadLock.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QLabel" name="label">

@@ -8,10 +8,7 @@
 #include <QMessageBox>
 #include <QCryptographicHash>
 #include <time.h>
-/*
- * El <random> s'elimina per evitar problemes de compatibilitat
- */
-//#include <random>
+#include <qmath.h>
 
 namespace Ui {
 class MainWindow;
